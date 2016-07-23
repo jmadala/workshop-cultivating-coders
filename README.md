@@ -415,8 +415,6 @@ $ oc create -f application-template-stibuild.json -n mytemplate
 
 We will leave the creation of templates for a future (and exciting!) workshop. 
 
-
-
-Thank you all for your time. We hope we've shown you how using Digital Garage as your development environemnt can make life easier for you as you build, test and stage your software applications. We look forward to working with you to continuously ensure Digital Garage is responsive to your needs and to strengthen our training process as well.
+Thank you all for your time. We hope we've shown you how using Digital Garage as your development environemnt can make life easier for you as you build, test and stage your software applications. We look forward to working with you to continuously ensure Digital Garage is responsive to your needs and to strengthening our training process as well.
 
 The Digital Garage Team
