@@ -3,8 +3,7 @@
 ## Prerequisites:
 * **Github:** This workshop requires an account on a git-based source code repository such as GitHub or BitBucket. To open a free account on GitHub go to this url: http://www.github.com.
 * **DockerHub:** It is helpful to have an account on DockerHub. You can open a free account on DockerHub at this url: http://www.dockerhub.com.
-* **Command Line Tools:** In order use your Command Line Interface (CLI), you must install the Openshift Origin Client Tools in your path. The binaries for Linux, Windows and OS X can be found here: https://github.com/openshift/origin/releases/tag/v1.2.0. 
-* Please see **Advanced Concepts** in this guide for more detailed information.
+* **Command Line Tools:** In order use your Command Line Interface (CLI), you must install the Openshift Origin Client Tools in your path. The binaries for Linux, Windows and OS X can be found here: https://github.com/openshift/origin/releases/tag/v1.2.0. **Please see Advanced Concepts in this guide for more detailed information.**
 
 ## Your First Application
 
