@@ -11,28 +11,20 @@ We will start working with Digital Garage through the web-based console, allowin
 
 **Working with the Web Console**
 
-Open a browser window (preferably in Google Chrome) and go to the following URL: https://thedigitalgarage.io:8443
+Open a browser window (preferably in Google Chrome) and go to the following URL: https://thedigitalgarage.io:8443 by right clicking on the link and have the browser open the page in a new tab or new browser window
 
-`For now, DigitalGarage.io is using a self-signed SSL certificate. If we are logging on through the web console, we will need to accept the security warning. If we are logging in through the CLI, we need to bypass the certificate check. Please do not worry. Your connection will be secure. We just have not yet deployed a certificate from a recognized signing authority.`
+[insert image of login screen]
 
-The first screen you will see is the authentication screen. 
+Please register and verify your account to create your Digital Garage user profile. 
 
-![login]
+Since this is the first time you will be making a project on Digital Grage, you will be taken directly to the “Select Image or Template" screen. 
 
-[login]: https://raw.githubusercontent.com/thedigitalgarage/workshop-cultivating-coders/master/login.png
+[insert image of a clean "Select Image of Template" screen]
 
-Enter in the following credentials:
+Upon future logins, once you have a roster of projects in your account, you will instead be taken to a list of projects associated with your user account:
 
-Username: {YOUR_EMAIL_ADDRESS}  
-Password: {ANY_PASSWORD}
+Since this is the first time you are logging in, and you do not have a project, let's create one.
 
-After you authenticate to the web console, you will be see a list of projects associated with your user account:
-
-![list]
-
-[list]: https://raw.githubusercontent.com/thedigitalgarage/workshop-cultivating-coders/master/project-list.png
-
-If this is the first time you are logging in, you will not have a project. Let's create one. 
 Click the orange **Add Project** button (the folder with a "+" symbol). The next screen will ask you for the name, display name and description of the project. 
 
 *** NOTE: For the name of the project, please be sure to create a unique name such as {username}-first-project to avoid naming conflicts with other users.
@@ -70,7 +62,7 @@ A cofnirmation page will appear with some information about your project and the
 [pods]: https://raw.githubusercontent.com/thedigitalgarage/workshop-cultivating-coders/master/po_w_pods.png
 
 
-As resources are deployed to Digital Garage, the status circle will change. When the circles are green, you know your application has been deployed. Once deployment is complete, click the link titled: **NODEJS-MONGODB-EXAMPLE**. 
+As resources are deployed to Digital Garage, the status circle will change. When the circles are green, you know your application has been deployed. It should take about 4 minutes to fully deploy this project. Once completed, click the link titled: **NODEJS-MONGODB-EXAMPLE**. 
 
 __Congratulations! You have just deployed your first application, "Hello World" on the Digital Garage!__
 
@@ -93,7 +85,7 @@ kubernetes v1.1.0-origin-1107-g4c8e6f4
 ```
 Don’t be concerned if the version numbers are greater than the ones listed here. 
 
-`Since DigitalGarage.io is using a self-­signed SSL certificate, we need to bypass the certificate check when logging in through the CLI. Just a reminder that your connection will be secure, but we have just have not yet deployed a certificate from a recognized signing authority.`
+Please register and verify your account to create your Digital Garage user profile. 
 
 NOTE: If you already have a ~/.kube/config file on your machine make sure to rename it something else. If you don’t, your command line tools may try to connect to a different machine.
 
@@ -196,7 +188,7 @@ Volumes:
 ** Note: The above output has been truncated in this document for space considerations.
 ```
 
-Let’s start by doing the simplest thing possible. Let's get a simple Docker image to run on the Digital Garage platform. To do this, we are going to use the official Docker Hub image for Ghost, a popular blogging tool. (https://hub.docker.com/_/ghost/).
+Let’s start by doing the simplest thing possible. Let's get a simple Docker image to run on the Digital Garage platform. To do this, we are going to use the official Docker Hub image for Ghost, a popular blogging tool, that has been further curated by Digital Garage. (https://hub.docker.com/_/ghost/).
 
 ```
 $ oc new-app thedigitalgarage/ghost
