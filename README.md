@@ -11,19 +11,17 @@ We will start working with Digital Garage through the web-based console, allowin
 
 **Working with the Web Console**
 
-Open a browser window (preferably in Google Chrome) and go to the following URL: https://thedigitalgarage.io:8443 by right clicking on the link and have the browser open the page in a new tab or new browser window
+Open a browser window (**preferably in Google Chrome**) and go to the following URL: https://thedigitalgarage.io:8443 by right clicking on the link and have the browser open the page in a new tab or new browser window
 
 [insert image of login screen]
 
-Please register and verify your account to create your Digital Garage user profile. 
+Please register and follow the steps to verify your account and create your Digital Garage user profile. 
 
 Since this is the first time you will be making a project on Digital Grage, you will be taken directly to the “Select Image or Template" screen. 
 
 [insert image of a clean "Select Image of Template" screen]
 
-Upon future logins, once you have a roster of projects in your account, you will instead be taken to a list of projects associated with your user account:
-
-Since this is the first time you are logging in, and you do not have a project, let's create one.
+Upon future logins, once you have a roster of projects in your account, you will instead be taken to a list of projects associated with your user account. For now, since you do not have a project, let's create one.
 
 Click the orange **Add Project** button (the folder with a "+" symbol). The next screen will ask you for the name, display name and description of the project. 
 
@@ -77,7 +75,16 @@ So, about those command line tool...
 
 ### Command Line
 
-`To get started with the CLI, we need to download the appropriate binary for your work machine and extract the oc file and put it in a directory in your path (or you can add the extraction location to your path). The command line utilities all start with the title openshift­origin­v* and then end with the name of the platform (Darwin is for Mac). Once you complete extracting the file you should be able to:`
+To get started with the CLI, we need to:
+1. Download the appropriate files for your work machine
+2. Extract the oc file
+3. Put it in a directory in your path (or you can add the extraction location to your path) 
+
+The necessary files can be found here: https://github.com/openshift/origin/releases/tag/v1.2.0 (scroll to the bottom)
+
+Download the file appropriate for your machine. Then, go to your downloads folder, open the blue folder titled openshift-origin-client-tools... Inside the flder you will see a file simply titled "oc". This is your oc exec file that you will place in a designated folder. We suggest you place this file under **home/opt/bin**. 
+
+Once you complete extracting and moving the file, from the CL, you should be able to:`
 ```
 $ oc version 
 oc v1.1.0.1
@@ -85,7 +92,7 @@ kubernetes v1.1.0-origin-1107-g4c8e6f4
 ```
 Don’t be concerned if the version numbers are greater than the ones listed here. 
 
-Please register and verify your account to create your Digital Garage user profile. 
+Please register and verify your account to create your Digital Garage user profile. You may have to go through a secure security sign in and obtain a token from Digital Garage. Please follow the steps on your screen to do so. 
 
 NOTE: If you already have a ~/.kube/config file on your machine make sure to rename it something else. If you don’t, your command line tools may try to connect to a different machine.
 
@@ -216,7 +223,10 @@ Once the service is running, we can expose a route to the service allowing us to
 $ oc expose svc ghost --hostname=ghost.jmac-first-project.apps.thedigitalgarage.io
 route "ghost" exposed
 ```
-These are the only commands you need to get a “plain vanilla” Docker image deployed to Digital Garage. This process should work with any Docker image that follows best practices, such as not running as root, defining an EXPOSE port and with a CMD to execute on start.
+These are the only commands you need to get a “plain vanilla” Docker image deployed to Digital Garage. This process should work with any Docker image that follows best practices, such as not running as root, having a port EXPOSED, and even just defining a CMD to execute on start. More informtaion on best practices can be found at:
+
+[Docker Best Practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)
+[Project Atomic](http://docs.projectatomic.io/container-best-practices/) (scroll down to Section 5)
 
 #### Background: Services
 
@@ -306,14 +316,6 @@ Next, let's learn a bit about Deployment Configurations and Replication Controll
 In the web console, click the up arrow next to the pod status indicator. You will see the number of pods scaling to 2. Click it again, and the number of pods will scale to 3. After all of the pods are in running status, click the url (route) in the service to check and see if Ghost is still running.
 
 
-#### Background: Deployment Configurations and Replication Controllers
-
-While services provide routing and load balancing for pods which may blink in and out of existence, **ReplicationControllers (RC)** are used to specify and enforce the number of pods (replicas) that should be in existence. RCs can be thought of as living at the same level as Services, but providing different functionality above the pods. RCs are a Kubernetes object.
-
-The Digital Garage platform provides a “wrapper” object on top of the RC called a **Deployment Configuration (DC)**. DCs not only include the RC, but they also allow you to define how transitions between images occur as well as post-deploy hooks and other deployment actions. In general, in the Digital Garage platform you should interact mainly with the platform objects. We don’t prevent you from interacting with the Kubernetes objects, but we put our objects there for a reason. The two native Kubernetes objects we did not wrap are Pods and Services.
-
-On Digital Garage, clicking the up/down arrows is the simplest way we could think of for you to scale up your pods in a service. If you watch the web UI while the pods are spinning up, you will see 2 new pods show up as pending (grey), and then running (green). Scaling on Digital Garage happens so quickly that the changes occur before you can switch screens or type the commands. The rapidness of this command is driven by the fact that we are basically spinning up Docker containers that are already cached after the first deployment.
-
 #### Background: Routes
 
 By default, the new-app command assumes that you **do not** want to expose the new service to the outside world. If you **do** want to expose a service as an HTTP endpoint, you can easily do this with a route. The Digital Garage platform's global router uses the host HTTP header to determine where to send the request. You can optionally define security, such as TLS, for the route.
@@ -328,9 +330,9 @@ It's as easy as that. Although routes and routing can get very complicated when 
 
 ### Deploy Source Code and a Docker Image
 
-#### Background: Source to Image
+#### Background: Source-To-Image (STI)
 
-We have seen how we can deploy a standard, stand-alone Docker image. Now, let’s see how we can work with source code and builds with Docker images. We can use the new-app command to do a simple deploy of code with a Docker image. The RedHat OpenShift and Digital Garage teams have built some Docker images that are enabled for a more generic build mechanism, called Source-To-Image (or STI).
+We have seen how we can deploy a standard, stand-alone Docker image. Now, let’s see how we can work with source code and builds with Docker images. We can use the new-app command to do a simple deploy of code with a Docker image. The RedHat OpenShift and Digital Garage teams have built some Docker images that are enabled for a more generic build mechanism, called STI.
 
 STI is an Open Source project sponsored by Red Hat. It’s goal is to provide a simple, efficient, and stand-alone mechanism to inject source code into a Docker image and produce a Docker image that can run as-is. The Digital Garage platform is STI enabled and can use STI as one of it’s build mechanisms (in addition to Docker build and custom build). A full discussion of STI is beyond the scope of this workshop; however, please read the documentation to learn more about this project.
 
@@ -399,11 +401,11 @@ Finally, we need to go back into the Github repository and make a small change t
 
 Running several individual commands to create builds, services, routes and objects can be tedious and error prone. You can actually put all of this configuration together into a **template** file which can then be processed to create a full set of services. In a template, you may have parameters for certain values, such as a database username or password, and these can be automatically generated at processing time.
 
-Templates can actually be loaded on the server so they are available for use in your web console when creating a new application. In order to add a template so anyone with access to the project can also use the template, you will need to download the template to your local file system. 
+Templates can actually be loaded on the server so they are available for use in your web console when creating a new application. In order to add a template so that anyone with access to the project can also use the template, you will need to download the template to your local file system. 
 
-To do this, you **must** execute the following command to ensure you point to the location of the template file and replace **mytemplate** with the actual name of your project:
+To do this, you **must** execute the following command to ensure you point to the location of the template file and **replace **mytemplate** with the actual name of your project**:
 
-$ oc create -f application-template-stibuild.json -n mytemplate
+$ oc create -f application-template-stibuild.json -n **mytemplate**
 
 We will leave the creation of templates for a future (and exciting!) workshop. 
 
