@@ -226,6 +226,7 @@ route "ghost" exposed
 These are the only commands you need to get a “plain vanilla” Docker image deployed to Digital Garage. This process should work with any Docker image that follows best practices, such as not running as root, having a port EXPOSED, and even just defining a CMD to execute on start. More informtaion on best practices can be found at:
 
 [Docker Best Practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)
+
 [Project Atomic](http://docs.projectatomic.io/container-best-practices/) (scroll down to Section 5)
 
 #### Background: Services
