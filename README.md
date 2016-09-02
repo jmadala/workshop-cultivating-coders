@@ -13,7 +13,9 @@ We will start working with Digital Garage through the web-based console, allowin
 
 Open a browser window (**preferably in Google Chrome**) and go to the following URL: https://thedigitalgarage.io:8443 by right clicking on the link and have the browser open the page in a new tab or new browser window
 
-[insert image of login screen]
+![login]
+
+[login]: https://github.com/jmadala/workshop-cultivating-coders/login-screen.png
 
 Please register and follow the steps to verify your account and create your Digital Garage user profile. 
 
