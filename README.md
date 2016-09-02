@@ -15,7 +15,7 @@ Open a browser window (**preferably in Google Chrome**) and go to the following 
 
 ![login]
 
-[login]: https://github.com/jmadala/workshop-cultivating-coders/login-screen.png
+[login]:(https://github.com/jmadala/workshop-cultivating-coders/login-screen.png?raw=true)
 
 Please register and follow the steps to verify your account and create your Digital Garage user profile. 
 
