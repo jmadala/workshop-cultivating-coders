@@ -13,15 +13,13 @@ We will start working with Digital Garage through the web-based console, allowin
 
 Open a browser window (**preferably in Google Chrome**) and go to the following URL: https://thedigitalgarage.io:8443 by right clicking on the link and have the browser open the page in a new tab or new browser window
 
-![login]
-
-[login]:(https://github.com/jmadala/workshop-cultivating-coders/login-screen.png?raw=true)
+**[INSERT LOGIN SCREEN IMAGE]**
 
 Please register and follow the steps to verify your account and create your Digital Garage user profile. 
 
-Since this is the first time you will be making a project on Digital Grage, you will be taken directly to the “Select Image or Template" screen. 
+Since this is the first time you will be making a project on Digital Garage, you will be taken directly to the “Select Image or Template" screen. 
 
-[insert image of a clean "Select Image of Template" screen]
+**[insert image of a clean "Select Image of Template" screen]**
 
 Upon future logins, once you have a roster of projects in your account, you will instead be taken to a list of projects associated with your user account. For now, since you do not have a project, let's create one.
 
@@ -31,7 +29,7 @@ Click the orange **Add Project** button (the folder with a "+" symbol). The next
 
 Projects are a top level organizational concept. A project allows a community of users (or a user) to organize and manage their content in isolation from other communities. Each project has its own resources, policies (who can or cannot perform actions), and constraints (this project is allowed this much quota, etc.). Projects act as a “wrapper” around all the application services and endpoints you (or your teams) are using for your work.
 
-Click on the **First Project** project to view the operations that you can perform on this specific project. After you click on **First Project**, you will be presented with the **Project Overview** page:
+Click on your **First Project** project to view the operations that you can perform on this specific project. After you click on **First Project**, you will be presented with the **Project Overview** page:
 
 ![overview]
 
@@ -53,24 +51,24 @@ Click the **Browse** button and select **Quickstart** from the dropdown menu to 
 
 [template]: https://raw.githubusercontent.com/thedigitalgarage/workshop-cultivating-coders/master/template.png
 
-Take a moment to review the options in the Quick Start template. You have the ability to change any of these options but, for now, just choose the defaults by clicking **Create**.
+Take a moment to review the options in the Quickstart template. You have the ability to change any of these options but, for now, just choose the defaults by clicking **Create**.
 
-A cofnirmation page will appear with some information about your project and the resources you have just added. You will also see a section detailing how to create a **GitHub webhook**. We will cover webhooks later. For now just click **Continue to Project Overview**. You will see the following screen:
+A confirmation page will appear with some information about your project and the resources you have just added. You will also see a section detailing how to create a **GitHub webhook**. We will cover webhooks later. For now just click **Continue to Project Overview**. You will see the following screen:
 
 ![pods]
 
 [pods]: https://raw.githubusercontent.com/thedigitalgarage/workshop-cultivating-coders/master/po_w_pods.png
 
 
-As resources are deployed to Digital Garage, the status circle will change. When the circles are green, you know your application has been deployed. It should take about 4 minutes to fully deploy this project. Once completed, click the link titled: **NODEJS-MONGODB-EXAMPLE**. 
+As resources are deployed to Digital Garage, the status circle will change. When the circles are green, you know your application has been deployed. It should take less than 10 minutes to fully deploy this project. Once completed, click the link titled: **NODEJS-MONGODB-EXAMPLE**. 
+
+**[INSERT PICTURE OF THE "HELLO WORLD!" SCREEN]**
 
 __Congratulations! You have just deployed your first application, "Hello World" on the Digital Garage!__
 
-We will be explainging the concepts behind all these actions in due time. For now, we just wanted to give you a taste of how quick and easy it is to deploy a project on Digital Garage.
+We will be explaining the concepts behind all these actions in due time. For now, we just wanted to give you a taste of how quick and easy it is to deploy a project on Digital Garage.
 
-Feel free to go ahead and play around with the web console to get familiar with the various functionalities. During this workshop, we will be using both the web console command line tools. 
-
-So, about those command line tool...
+Feel free to go ahead and play around with the web console to get familiar with the various functionalities. During this workshop, we will be using both the web console and the command line tools. 
 
 
 ## Advanced Concepts
@@ -84,9 +82,9 @@ To get started with the CLI, we need to:
 
 The necessary files can be found here: https://github.com/openshift/origin/releases/tag/v1.2.0 (scroll to the bottom)
 
-Download the file appropriate for your machine. Then, go to your downloads folder, open the blue folder titled openshift-origin-client-tools... Inside the flder you will see a file simply titled "oc". This is your oc exec file that you will place in a designated folder. We suggest you place this file under **home/opt/bin**. 
+Download the file appropriate for your machine. Then, go to your downloads folder, open the blue folder titled openshift-origin-client-tools... Inside the folder you will see a file simply titled "oc". This is your oc exec file that you will place in a designated folder. We suggest you place this file under **home/opt/bin**. 
 
-Once you complete extracting and moving the file, from the CL, you should be able to:`
+Once you complete extracting and moving the file, from the CLI, you should be able to type:
 ```
 $ oc version 
 oc v1.1.0.1
@@ -94,32 +92,28 @@ kubernetes v1.1.0-origin-1107-g4c8e6f4
 ```
 Don’t be concerned if the version numbers are greater than the ones listed here. 
 
-Please register and verify your account to create your Digital Garage user profile. You may have to go through a secure security sign in and obtain a token from Digital Garage. Please follow the steps on your screen to do so. 
+If you have not already done so, please register and verify your account to create your Digital Garage user profile from the web console. Now, from the CLI, you will have to go through a secure sign in process and obtain a token from Digital Garage. Please follow the steps on your screen to do so. 
 
 NOTE: If you already have a ~/.kube/config file on your machine make sure to rename it something else. If you don’t, your command line tools may try to connect to a different machine.
 
 ```
 $ oc login
-OpenShift server [https://localhost:8443]: https://104.36.17.74:8443	
-The server uses a certificate signed by an unknown authority.
-You can bypass the certificate check, but any data you send to the server could be intercepted by others.
-Use insecure connections? (y/n): {y}
+Login failed (401 Unauthorized)
+You must obtain an API token by visiting https://apps.thedigitalgarage.io.8443/oauth/token/request
+```
+Once you enter your unique token on the CLI, you will see:
 
-Authentication required for https://104.36.17.74:8443 (openshift) 
-Username: {YOUR_EMAIL_ADDRESS}
-Password: {ANY_PASSWORD}
-Login successful.
-
+```
 Using project "YOUR PROJECT NAME".
 ```
 
-**Congratulations! You are now authenticated to the Digital Garage server. We are working in a project named XXX-first-project.** 
+**Congratulations! You are now authenticated to the Digital Garage server via the CLI.
 
 ### Deploying a Stand-Alone Docker Image
 
 #### Background: Containers and Pods
 
-Before we start digging in, let's talk a bit about how **containers** (Docker images and instances) and **pods** are related. Since you are in this class, you may be somewhat familiar with how Docker works, but to use Digital Garage, you actualy don’t need to use any Docker commands at all. Instead, you can interact with the platform directly. But, if you'd like more infomration on Docker, there are several reference guides on how containers work in general and on Docker, in particular:
+Before we start digging in, let's talk a bit about how **containers** (Docker images and instances) and **pods** are related. Since you are in this class, you may be somewhat familiar with how Docker works, but to use Digital Garage, you actualy don’t need to use any Docker commands at all. Instead, you can interact with the platform directly. But, if you'd like more information on Docker, there are several reference guides on how containers work in general and on Docker, in particular:
 
 https://docs.docker.com/introduction/understanding­docker/
 
@@ -200,7 +194,7 @@ Volumes:
 Let’s start by doing the simplest thing possible. Let's get a simple Docker image to run on the Digital Garage platform. To do this, we are going to use the official Docker Hub image for Ghost, a popular blogging tool, that has been further curated by Digital Garage. (https://hub.docker.com/_/ghost/).
 
 ```
-$ oc new-app thedigitalgarage/ghost
+$ $oc process openshift//ghost | oc create -f -
 --> Found Docker image e1cbb75 (12 weeks old) from Docker Hub for "thedigitalgarage/ghost"
     * An image stream will be created as "ghost:latest" that will track this image
     * This image will be deployed in deployment config "ghost"
@@ -225,7 +219,11 @@ Once the service is running, we can expose a route to the service allowing us to
 $ oc expose svc ghost --hostname=ghost.jmac-first-project.apps.thedigitalgarage.io
 route "ghost" exposed
 ```
-These are the only commands you need to get a “plain vanilla” Docker image deployed to Digital Garage. This process should work with any Docker image that follows best practices, such as not running as root, having a port EXPOSED, and even just defining a CMD to execute on start. More informtaion on best practices can be found at:
+Alternatively, you can **create a route** directly from the web console, by visting your Overview page and selecting the option of the Ghost pod that was created. 
+
+If using the CLI is not your thing, Ghost is now available as an instant-app that you can deploy directly from the Digital Garage web console!
+
+In summary, these are the basic commands you need to get a “plain vanilla” Docker image deployed to Digital Garage. This process should work with any Docker image that follows best practices, such as not running as root, having a port EXPOSED, and even just defining a CMD to execute on start. More informtaion on best practices can be found at:
 
 [Docker Best Practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)
 
@@ -314,9 +312,7 @@ Volumes:
 
 Notice the service has a selector of deploymentconfig=ghost. Any pod who has a label key “deploymentconfig” whose value is “ghost” will be matched by this service, and that pod will be listed in the service’s endpoint table.
 
-Next, let's learn a bit about Deployment Configurations and Replication Controllers. 
-
-In the web console, click the up arrow next to the pod status indicator. You will see the number of pods scaling to 2. Click it again, and the number of pods will scale to 3. After all of the pods are in running status, click the url (route) in the service to check and see if Ghost is still running.
+Just a little introduction to replication controllers... In the web console, click the up arrow next to the pod status indicator. You will see the number of pods scaling to 2. Click it again, and the number of pods will scale to 3. After all of the pods are in running status, click the url (route) in the service to check and see if Ghost is still running.
 
 
 #### Background: Routes
@@ -374,7 +370,7 @@ Git Repository URL: https://github.com/YOUR_NAME/nodejs-ex.git
 Under the Routing section, we want to provide a Hostname.
 
 ```
-Hostname: nodejs-ex-test-jmac-second-project.apps.thedigitalgarage.io
+Hostname: [YOUR PROJECT NAME].apps.thedigitalgarage.io
 ```
 We can leave everything else as a default. Click **Create**.
 
@@ -383,34 +379,6 @@ On the confirmation page, pay close attention to the **Webhooks** section. Copy 
 Click **Continue to Overview** on the next screen to go to the **Overview** page.
 
 Here, under the service: **TEST-NODEJS-EXAMPLE**, click **View Log**. This will take you to the log file for that Docker container where you can watch for any build errors. Once the build is complete, and you have a pod running, click on the **route url** in the service. `You will see the same "Hello World" application we built earlier.`
-
-###Webhooks
-
-We are now going to configure a **webhook** that will trigger a rolling re-build on Digital Garage whenever we commit changes to our Github repository, or just when certain pre-selected individual firing events are met. Once a new build is completed, old pods will be automatically removed.
-
-1. In your web browser, log into your personal nodejs-ex repository.
-2. Click on "Settings" at the top of the page. 
-3. Under settings, find the "Webhooks and services" menu item and click.
-4. In the Webhooks section, click the "Add Webhook" button.
-5. Paste the URL payload you copied earlier to the Payload URL.
-6. Disable SSL Verification.
-7. Click the radio button for "Send Me Everything"
-8. Click "Add Webhook"
-9. Your webhook is now active.
-
-Finally, we need to go back into the Github repository and make a small change to the index.html file in order for you to share your template with other memebers of your team or external parties.
-
-###Using a Template
-
-Running several individual commands to create builds, services, routes and objects can be tedious and error prone. You can actually put all of this configuration together into a **template** file which can then be processed to create a full set of services. In a template, you may have parameters for certain values, such as a database username or password, and these can be automatically generated at processing time.
-
-Templates can actually be loaded on the server so they are available for use in your web console when creating a new application. In order to add a template so that anyone with access to the project can also use the template, you will need to download the template to your local file system. 
-
-To do this, you **must** execute the following command to ensure you point to the location of the template file and **replace **mytemplate** with the actual name of your project**:
-
-$ oc create -f application-template-stibuild.json -n **mytemplate**
-
-We will leave the creation of templates for a future (and exciting!) workshop. 
 
 Thank you all for your time. We hope we've shown you how using Digital Garage as your development environemnt can make life easier for you as you build, test and stage your software applications. We look forward to working with you to continuously ensure Digital Garage is responsive to your needs and to strengthening our training process as well.
 
