@@ -380,6 +380,8 @@ Click **Continue to Overview** on the next screen to go to the **Overview** page
 
 Here, under the service: **TEST-NODEJS-EXAMPLE**, click **View Log**. This will take you to the log file for that Docker container where you can watch for any build errors. Once the build is complete, and you have a pod running, click on the **route url** in the service. `You will see the same "Hello World" application we built earlier.`
 
+This concludes today's **Intro to Digital Garage** tutorial! 
+
 Thank you all for your time. We hope we've shown you how using Digital Garage as your development environemnt can make life easier for you as you build, test and stage your software applications. We look forward to working with you to continuously ensure Digital Garage is responsive to your needs and to strengthening our training process as well.
 
 The Digital Garage Team
